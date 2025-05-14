@@ -16,7 +16,8 @@ This code is intended for developers following the MoveMasteryPath tutorials on 
 
 The code is organized into directories corresponding to specific tutorials or concepts covered on Twitter.
 
-* **[01-hello-wallet]:** Code related to [Hello Aptos Wallet]
+* **[01-hello-wallet]:** Code related to [Hello Petra Wallet]
+* **[02-personal_note]:** Code related to [Personal Note]
 
 
 ## Required Tools
