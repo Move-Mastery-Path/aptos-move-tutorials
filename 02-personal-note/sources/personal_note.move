@@ -34,13 +34,13 @@ module my_note::personal_note {
         // Check if the user has notes initialized
         assert!(exists<UserNotes>(user_address), EUSER_NOT_INITIALIZED);
 
-        let mut user_notes = borrow_global_mut<UserNotes>(user_address);
+        let user_notes = borrow_global_mut<UserNotes>(user_address);
         
         let new_note = Note { content };
         vector::push_back(&mut user_notes.notes, new_note);
     }
 
-    public entry fun get_notes(account: &signer): vector<Note> acquires UserNotes {
+    public fun get_notes(account: &signer): vector<Note> acquires UserNotes {
         let user_address = signer::address_of(account);
 
         // Check if the user has notes initialized
