@@ -5,16 +5,22 @@ module my_note::personal_note {
 
     use aptos_framework::timestamp;
 
-    ///errors
+    //
+    // errors,
+    //
 
     /// when user has not initialized their notes
     const EUSER_NOT_INITIALIZED: u64 = 0; 
+
     /// when user has already initialized their notes
     const EUSER_ALREADY_INITIALIZED: u64 = 1;
+
     /// when note is not found
     /// (e.g. when user tries to delete a note that does not exist)
     /// or when user tries to get a note that does not exist)
     const ENOTE_NOT_FOUND: u64 = 2;
+
+    /// core data structures
 
     struct Note has copy, drop, store {
         content: String,
@@ -22,6 +28,8 @@ module my_note::personal_note {
         updated_at: u64,
     }
 
+    /// this is a resource that stores the notes of a user
+    /// it is stored in the global storage
     struct UserNotes has key {
         notes: vector<Note>,
     }
@@ -51,9 +59,10 @@ module my_note::personal_note {
         vector::push_back(&mut user_notes.notes, new_note);
     }
 
-    public fun get_notes(account: &signer): vector<Note> acquires UserNotes {
-        let user_address = signer::address_of(account);
 
+    #[view]
+    public fun view_notes(user_address: address): vector<Note> acquires UserNotes {
+        
         // Check if the user has notes initialized
         assert!(exists<UserNotes>(user_address), EUSER_NOT_INITIALIZED);
 
