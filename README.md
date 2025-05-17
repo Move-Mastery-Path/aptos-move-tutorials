@@ -36,7 +36,7 @@ Please refer to the specific Twitter tutorial thread for any additional tools or
 
 ## Getting Started
 
-1.  **Follow on Twitter:** Make sure you're following the tutorials [here](https://x.com/AptosNoob/status/1918938543923097918).
+1.  **Follow on Twitter:** Make sure you're following the tutorials [here](https://x.com/AptosNoob/status/1923425108464394695).
 2.  **Follow Instructions:** Refer to the Twitter thread and any instructions within the specific tutorial folder here.
 
 We'll keep updating this as we progress
