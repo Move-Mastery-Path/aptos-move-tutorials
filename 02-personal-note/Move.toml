@@ -1,0 +1,16 @@
+[package]
+name = "personal-note"
+version = "1.0.0"
+authors = []
+
+[addresses]
+my_note = "0xd251724175b2caa8a45ae4c36578b1edb3ee294f766a9efb735f3a2cf53b879e"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
