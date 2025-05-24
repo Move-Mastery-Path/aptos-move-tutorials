@@ -28,7 +28,8 @@ module my_note::personal_note {
         updated_at: u64,
     }
 
-    /// this is a resource that stores the notes of a user
+    /// can't be copied or dropped so it's a resource
+    // this is a resource that stores the notes of a user
     /// it is stored in the global storage
     struct UserNotes has key {
         notes: vector<Note>,
@@ -58,7 +59,7 @@ module my_note::personal_note {
         let new_note = Note { content, created_at: current_time, updated_at: current_time };
         vector::push_back(&mut user_notes.notes, new_note);
     }
-
+ 
 
     #[view]
     public fun view_notes(user_address: address): vector<Note> acquires UserNotes {
