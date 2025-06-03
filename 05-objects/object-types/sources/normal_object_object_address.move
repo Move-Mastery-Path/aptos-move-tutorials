@@ -69,5 +69,4 @@ module my_address::normal_object {
         let data = borrow_global<MySimpleObjectData>(object_address);
         (data.unique_id, data.message)
     }
-
 }
